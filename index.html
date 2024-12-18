@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Spotless Form</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <img src="spotless-logo.png" alt="Spotless Logo" class="logo">
+            <h1>SPOTLESS FORM</h1>
+        </header>
+        <main>
+            <form id="form">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter Your First Name Here eg. John" required>
+                <small id="firstNameError">Invalid First Name</small>
+
+                <label for="otherNames">Other Names:</label>
+                <input type="text" id="otherNames" name="otherNames" placeholder="Enter Your Other Names Here eg. Stone Edward etc" required>
+                <small id="otherNamesError">Invalid Other Names</small>
+
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" placeholder="Enter Your Last Name Here eg. Luke" required>
+                <small id="surnameError">Invalid Surname</small>
+
+                <label>Sex:</label>
+                <input type="radio" id="male" name="sex" value="male" required>
+                <label for="male" class="male">Male</label><br>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female" class="female">Female</label>
+
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number Here eg. 07053824902" required>
+                <small id="phoneError">Invalid Phone Number</small>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email Here eg. example@email.domain" required>
+                <small id="emailError">Invalid Email</small>
+
+                <label for="religion">Select Religion:</label>
+                <select id="religion" name="religion" required>
+                    <option value="" selected disabled>Select Your Religion</option>
+                    <option value="christian">Christian</option>
+                    <option value="muslim">Muslim</option>
+                    <option value="traditionalist">Traditionalist</option>
+                </select>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Enter Your Address Here" required>
+
+                <label for="file">Upload Image</label>
+                <input type="file" id="file" name="file" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter Your Password Here" required>
+                <ul>
+                    <li>Your Password Should contain Uppercase Letters "A-Z"</li>
+                    <li>Your Password Should contain Lowercase Letters "a-z"</li>
+                    <li>Your Password Should contain Digits "0-9"</li>
+                    <li>Your Password Should contain Special Characters "~!@#$% etc"</li>
+                    <li>Your Password Should be at least 12 Characters</li>
+                </ul>
+                <small id="passwordError">Invalid Password</small>
+
+                <label for="confirmPassword"> Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Your Password Here" required>
+                <small id="confirmPasswordError">Invalid Password Confirmation</small>
+
+                <button type="button" id="subscribe">Subscribe to our Newsletter</button><br><br>
+
+                <button type="submit" id="submit">Register with Spotless</button>
+            </form>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
