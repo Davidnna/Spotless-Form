@@ -1,17 +1,11 @@
-let correctFirstName = false;
-let correctOtherNames = false;
-let correctSurname = false;
-let correctPhone = false;
-let correctEmail = false;
-let correctPassword = false;
-let correctConfirmPassword = false;
-
 document.getElementById("form").addEventListener("submit", function(event) {
 
-    const firstName = document.getElementById("firstName");
+    // Validate Username
+    const firstName = document.getElementById("firstName").value.trim();
     const firstNameError = document.getElementById("firstNameError");
     const firstNameRegex = /^[A-Z][a-z]*(?:[-'][A-Z][a-z]*)?$/;
-    if (!firstNameRegex.test(firstName.value)) {
+    let correctFirstName = false;
+    if (!firstNameRegex.test(firstName)) {
         firstNameError.style.display = "block";
         correctFirstName = false;
     }
@@ -20,10 +14,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
         correctFirstName = true;
     }
 
-    const otherNames = document.getElementById("otherNames");
+    // Validate Other names
+    const otherNames = document.getElementById("otherNames").value.trim();
     const otherNamesError = document.getElementById("otherNamesError");
     const otherNamesRegex = /^([A-Z][a-z]*(?:[-'][A-Z][a-z]*)?)(?:\s+[A-Z][a-z]*(?:[-'][A-Z][a-z]*)?)?$/;
-    if (!otherNamesRegex.test(otherNames.value)) {
+    let correctOtherNames = false;
+    if (otherNames !== "" && !otherNamesRegex.test(otherNames)) {
         otherNamesError.style.display = "block";
         correctOtherNames = false;
     }
@@ -32,10 +28,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
         correctOtherNames = true;
     }
 
-    const surname = document.getElementById("surname");
+    // Validate Surname
+    const surname = document.getElementById("surname").value.trim();
     const surnameError = document.getElementById("surnameError");
     const surnameRegex = /^[A-Z][a-z]*(?:[-'][A-Z][a-z]*)?$/;
-    if (!surnameRegex.test(surname.value)) {
+    let correctSurname = false;
+    if (!surnameRegex.test(surname)) {
         surnameError.style.display = "block";
         correctSurname = false;
     }
@@ -44,10 +42,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
         correctSurname = true;
     }
 
-    const phone = document.getElementById("phone");
+    // Validate Phone No.
+    const phone = document.getElementById("phone").value.trim();
     const phoneError = document.getElementById("phoneError");
     const phoneRegex = /^\d{11}$/;
-    if (!phoneRegex.test(phone.value)) {
+    let correctPhone = false;
+    if (!phoneRegex.test(phone)) {
         phoneError.style.display = "block";
         correctPhone = false;
     }
@@ -56,10 +56,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
         correctPhone = true;
     }
 
-    const email = document.getElementById("email");
+    // Validate Email
+    const email = document.getElementById("email").value.trim();
     const emailError = document.getElementById("emailError");
     const emailRegex = /^[^\s@]+@[^\s@A-Z]+\.[^\s@A-Z]+$/;
-    if (!emailRegex.test(email.value)) {
+    let correctEmail = false;
+    if (!emailRegex.test(email)) {
         emailError.style.display = "block";
         correctEmail = false;
     }
@@ -68,10 +70,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
         correctEmail = true;
     }
 
-    const password = document.getElementById("password");
+    // Validate Password
+    const password = document.getElementById("password").value.trim();
     const passwordError = document.getElementById("passwordError");
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[~!@#$%^&*()_+`\-={}[\]|\\:;"'<>,.?/]).{12,}$/;
-    if (!passwordRegex.test(password.value)) {
+    let correctPassword = false;
+    if (!passwordRegex.test(password)) {
         passwordError.style.display = "block";
         correctPassword = false;
     }
@@ -80,9 +84,11 @@ document.getElementById("form").addEventListener("submit", function(event) {
         correctPassword = true;
     }
 
-    const confirmPassword = document.getElementById("confirmPassword");
+    // Validate Confirm Password
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
     const confirmPasswordError = document.getElementById("confirmPasswordError");
-    if (password.value != confirmPassword.value) {
+    let correctConfirmPassword = false;
+    if (password !== confirmPassword) {
         confirmPasswordError.style.display = "block";
         correctConfirmPassword = false;
     }
@@ -91,7 +97,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
         correctConfirmPassword = true;
     }
 
+    // Display Status
     if(!correctFirstName || !correctOtherNames || !correctSurname || !correctPhone || !correctPhone || !correctEmail || !correctPassword || !correctConfirmPassword) {
         event.preventDefault();
+    }
+    else {
+        const successful = document.getElementById("successful");
+        successful.style.display = "block";
     }
 });

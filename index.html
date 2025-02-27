@@ -3,43 +3,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="spotless-logo.png">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="images/spotless-logo.png">
+        <!-- <link rel="icon" type="image/png" href="https://i.postimg.cc/rmrPzGvh/logo.png"> -->
+        <link rel="stylesheet" href="styles/styles.css">
         <title>Spotless Form</title>
     </head>
     <body>
+        <!-- Header -->
         <header>
-            <img src="spotless-logo.png" alt="Spotless Logo" class="logo">
+            <!-- Logo -->
+            <figure>
+                <img src="images/spotless-logo.png" alt="Spotless Logo" class="logo">
+                <!-- <img src="https://i.postimg.cc/rmrPzGvh/logo.png" alt="Spotless Logo" class="logo"> -->
+            </figure>
             <h1>SPOTLESS FORM</h1>
         </header>
+        <!-- Main -->
         <main>
+            <!-- Form -->
             <form id="form">
+                <!-- First Name -->
                 <label for="firstName">First Name:</label>
                 <input type="text" id="firstName" name="firstName" placeholder="Enter Your First Name Here eg. John" required>
-                <small id="firstNameError">Invalid First Name</small>
+                <small id="firstNameError">Invalid First Name: Your name Should Start with a Capital Letter</small>
 
+                <!-- Other Names -->
                 <label for="otherNames">Other Names:</label>
-                <input type="text" id="otherNames" name="otherNames" placeholder="Enter Your Other Names Here eg. Stone Edward etc" required>
-                <small id="otherNamesError">Invalid Other Names</small>
+                <input type="text" id="otherNames" name="otherNames" placeholder="Enter Your Other Names Here eg. Stone Edward etc">
+                <small id="otherNamesError">Invalid Other Names: Your name Should Start with a Capital Letter</small>
 
+                <!-- Surname -->
                 <label for="surname">Surname:</label>
                 <input type="text" id="surname" name="surname" placeholder="Enter Your Last Name Here eg. Luke" required>
-                <small id="surnameError">Invalid Surname</small>
+                <small id="surnameError">Invalid Surname: Your name Should Start with a Capital Letter</small>
 
+                <!-- Sex -->
                 <label>Sex:</label>
                 <input type="radio" id="male" name="sex" value="male" required>
                 <label for="male" class="male">Male</label><br>
                 <input type="radio" id="female" name="sex" value="female">
                 <label for="female" class="female">Female</label>
 
+                <!-- Phone No -->
                 <label for="phone">Phone No:</label>
                 <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number Here eg. 07053824902" required>
                 <small id="phoneError">Invalid Phone Number</small>
 
+                <!-- Email -->
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter Your Email Here eg. example@email.domain" required>
                 <small id="emailError">Invalid Email</small>
 
+                <!-- Religion -->
                 <label for="religion">Select Religion:</label>
                 <select id="religion" name="religion" required>
                     <option value="" selected disabled>Select Your Religion</option>
@@ -48,14 +63,18 @@
                     <option value="traditionalist">Traditionalist</option>
                 </select>
 
+                <!-- Address -->
                 <label for="address">Address:</label>
                 <input type="text" id="address" name="address" placeholder="Enter Your Address Here" required>
 
+                <!-- File -->
                 <label for="file">Upload Image</label>
-                <input type="file" id="file" name="file" required>
+                <input type="file" id="file" name="file" accept="image/*" required>
 
+                <!-- Password -->
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter Your Password Here" required>
+                <!-- Password Details -->
                 <ul>
                     <li>Your Password Should contain Uppercase Letters "A-Z"</li>
                     <li>Your Password Should contain Lowercase Letters "a-z"</li>
@@ -65,15 +84,21 @@
                 </ul>
                 <small id="passwordError">Invalid Password</small>
 
+                <!-- Confirm Password -->
                 <label for="confirmPassword"> Confirm Password:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Your Password Here" required>
                 <small id="confirmPasswordError">Invalid Password Confirmation</small>
+                
+                <!-- Successful -->
+                <small id="successful">Login Successful</small>
 
+                <!-- Subscribe -->
                 <button type="button" id="subscribe">Subscribe to our Newsletter</button><br><br>
 
+                <!-- Submit -->
                 <button type="submit" id="submit">Register with Spotless</button>
             </form>
         </main>
-        <script src="script.js"></script>
+        <script src="scripts/script.js"></script>
     </body>
 </html>
